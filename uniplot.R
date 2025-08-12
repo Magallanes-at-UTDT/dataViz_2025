@@ -1,13 +1,12 @@
 rm(list = ls())
 library(ggplot2)
-library(dplyr)  # For data manipulation
+library(dplyr) 
 
 
 set.seed(123)  # For reproducibility
 link="https://github.com/Magallanes-at-UTDT/dataViz_2025/raw/refs/heads/main/fragility_total_change2023_2006.csv"
 fragility_data =read.csv(link)
 
-# Calculate counts and percentages
 bar1var=fragility_data %>%
     count(change_category, name = "count") %>%
     mutate(percent = sprintf("(%.1f%%)", count/sum(count)*100)) %>%
