@@ -11,5 +11,7 @@ fragilityMap=sf::st_read(linkMap, layer = "countries")
 head(fragilityMap)
 
 library(ggplot2)
-ggplot() + theme_void() +
+mapClus=ggplot() + theme_void() +
 geom_sf(data=border, color='grey') + geom_sf(data=fragilityMap, aes(fill=cluster_label))
+
+saveRDS(mapClus,file = 'mapClus.rds')
