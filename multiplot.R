@@ -14,4 +14,5 @@ library(ggplot2)
 mapClus=ggplot() + theme_void() +
 geom_sf(data=border, color='grey') + geom_sf(data=fragilityMap, aes(fill=cluster_label))
 
+mapClus
 saveRDS(mapClus,file = 'mapClus.rds')

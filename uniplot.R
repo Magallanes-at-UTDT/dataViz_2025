@@ -31,6 +31,7 @@ bar1var
 saveRDS(bar1var, file = "bar1var.rds")
 
 ###
+library(ggwordcloud)
 cloud1var=ggplot(
     fragility_data,
     aes(
